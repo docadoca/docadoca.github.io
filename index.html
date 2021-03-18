@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html manifest="index.hyperesources/cache.manifest">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+	<title>Declan Reid - St Augustines College</title>
+	<style>
+		html {
+			height:100%;
+		}
+		body {
+			background-color:#FFF;
+			margin:0;
+			height:100%;
+		}
+	</style>
+	<!-- copy these lines to your document head: -->
+
+	<meta name="viewport" content="user-scalable=yes, width=1680" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	 <script type="text/javascript">
+
+// Variable to check if fullscreen is on/off
+var db, isfullscreen = false;
+
+//following lines are for "adapt document size to window size" funtion
+  function myCallback(hypeDocument, element, event) {
+    if (isScalePossible()){
+      window.myHypeContainerId = hypeDocument.documentId();
+      $('#' + window.myHypeContainerId).css({
+        '-moz-transform-origin': '0% 0%',
+        '-webkit-transform-origin': '0% 0%',
+        '-ms-transform-origin': '0% 0%',
+        '-o-transform-origin': '0% 0%',					
+        'transform-origin': '0% 0%',
+        margin: 0
+      });
+
+      scaleSite();
+      $(window).resize(scaleSite);
+    }
+    return true;
+  }
+
+  if("HYPE_eventListeners" in window === false) {
+    window.HYPE_eventListeners = Array();
+  }
+  window.HYPE_eventListeners.push({"type":"HypeDocumentLoad", "callback":myCallback});
+
+
+  function scaleSite()
+  {
+  	var hypeContainer = $('#' + window.myHypeContainerId);
+    var containerWidth = hypeContainer.width();
+    var containerHeight = hypeContainer.height();
+    var parentWidth = hypeContainer.parent().width();
+    var parentHeight = hypeContainer.parent().height();
+    var scaleWidth = parentWidth / containerWidth;
+    var scaleHeight = parentHeight / containerHeight;
+    var scale = Math.min(scaleWidth, scaleHeight);
+    var left = (containerWidth * scale < parentWidth) ? ((parentWidth - (containerWidth * scale)) / 2) + 'px' : '0px';
+    var top = (containerHeight * scale < parentHeight) ? ((parentHeight - (containerHeight * scale)) / 2) + 'px' : '0px' ;
+    hypeContainer.css({
+        "-moz-transform"    : "scale("+scale+")",
+        "-webkit-transform" : "scale("+scale+")",
+        "-ms-transform"     : "scale("+scale+")",
+        "-o-transform"      : "scale("+scale+")",
+        "transform"         : "scale("+scale+")",
+        "left" : left,
+        "top" : top
+    });
+  }
+
+  function isScalePossible() 
+  {
+    can = 'MozTransform' in document.body.style;
+    if(!can) can = 'webkitTransform' in document.body.style;
+    if(!can) can = 'msTransform' in document.body.style;
+    if(!can) can = 'OTransform' in document.body.style;
+    if(!can) can = 'transform' in document.body.style;
+    if(!can) can = 'Transform' in document.body.style;
+    return can;
+  }
+
+</script>
+	
+
+	<!-- end copy -->
+  </head>
+  <body>
+	<!-- copy these lines to your document: -->
+
+	<div id="index_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;">
+		<noscript>
+			<img src="index.hyperesources/poster.jpg" width="100%" height="100%">
+		</noscript>
+		<script type="text/javascript" charset="utf-8" src="index.hyperesources/index_hype_generated_script.js?30250"></script>
+	</div>
+
+	<!-- end copy -->
+	
+
+
+	<!-- text content for search engines: -->
+
+	<div style="display:none" aria-hidden=true>
+
+		<div>Home
+</div>
+		<div> What is Sandhurst? What does it look like? Who is involved?
+ 
+ Questions answered here.
+</div>
+		<div>The Sandhurst Diocese
+</div>
+		<div> St. Augustines College Kyabram (Main Page)
+</div>
+		<div> The Sandhurst Diocese was founded in 1874 by melbourne, this
+ consisted of the land bordered by the Murray river north and east, the
+ loddon river to the west and the Great Divide off the the south. There
+ was already 5 missions at the time: Sandhurst, Heathcote, Beechworth,
+ Wangaratta and Echuca.
+</div>
+		<div>Links</div>
+		<div> He lectured at Australian catholic
+ University, and he is the 8th Bishop
+ of Sandhurst in 23rd July 2011.
+</div>
+		<div> St. Augustines College Kyabram (Facebook)
+</div>
+		<div> The current Bishop is Shane
+ Mackinlay, He was Born in
+ Melbourne 1965, he moved to
+ Ballarrat in 1975. He has 2 siblings.
+ He is a Parish Priest at Hamilton,
+ Colac, Ballarat, Sebastopol and
+ Gordon.
+</div>
+		<div></div>
+		<div>Declan Reid - St Augustine College
+</div>
+		<div>Currently Preparing “Sandhurst Diocese"...</div>
+		<div></div>
+		<div>Currently Preparing “Home"...</div>
+
+	</div>
+
+	<!-- end text content: -->
+
+  </body>
+</html>
